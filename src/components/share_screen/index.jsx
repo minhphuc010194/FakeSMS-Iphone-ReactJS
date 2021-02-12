@@ -18,6 +18,7 @@ import reddit from '../../icons/reddit.png';
 import vertical_dash from '../../icons/vertical_dash.png';
 import undercore from '../../icons/undercore.png';
 
+import './index.css';
 import {IoIosArrowBack} from 'react-icons/io';
 import {MdNavigateNext} from 'react-icons/md';
 
@@ -55,31 +56,45 @@ function Share_screen(props) {
                 </Col>
                 <Col></Col>
             </Row>
-
+            <br/>
 {/* =============messenger========================== */}
             <Row className="body-phone" style={{minHeight: 668, maxHeight: 1201}}>
                 <Col>
-                    <Row>
-                        <Col>
-                            <span style={{background: '#d6d7dc', marginLeft: 24, textShadow: '1px 1px 0 #f3f3f4' }}>
-                                Hello my name is Phuc
+                    <Row style={{top: 0, display: 'block'}}>
+                        <Col className='bubble-grey'>
+                            <span >
+                                ACB: TK 2132132323232(VND) +190,000,000 luc 01:59 12/02/2021. So du 188,001,000. GD: li xi tet :D.
                             </span>
+                            <div className='corner'></div>
+                        </Col>
+                        
+                    </Row>
+                    
+                    <Row style={{top: 0, display: 'block'}}>
+                        <Col className='bubble-grey'>
+                            <span >
+                                ACB: TK 2132132323232(VND) +190,000,000 luc 01:59 12/02/2021. So du 188,001,000. GD: li xi tet :D.
+                            </span>
+                            <div className='corner'></div>
+                        </Col>
+                    </Row>
+                    <Row style={{top: 0, display: 'block'}}>
+                        <Col className='bubble-grey'>
+                            <span >
+                                Hello my name is Phuc adsasdas dsssssss das fasfdsf SDF
+                            </span>
+                            <div className='corner'></div>
                         </Col>
                     </Row>
                     {/* <Row>
-                         <Col>
-                            <span style={{background: '#e5e5ea', marginLeft: 24, textShadow: '1px 1px 0 #f3f3f4' }}>
+                        <Col>
+                            <span className='bubble-grey'>
                                 Hello my name is Phuc
                             </span>
-                        </Col>
-                    </Row>
-                    <Row>
-                         <Col>
-                            <span style={{background: '#e5e5ea', marginLeft: 24, textShadow: '1px 1px 0 #f3f3f4' }}>
-                                Hello my name is Phuc
-                            </span>
+                            <div className='corner'></div>
                         </Col>
                     </Row> */}
+                    
                 </Col>
                 
             </Row>
