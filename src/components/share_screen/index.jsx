@@ -66,7 +66,7 @@ function Share_screen(props) {
             <Row className="header-phone-row-02">
                 <Col>
                     <IoIosArrowBack size={35} color="#007bff" />
-                    <span >
+                    <span style={{display: (!count_mess)&&"none"}}>
                        <Badge 
                             style={{borderRadius: 15, fontWeight:400, height: 20, width: 30, position:"relative", left: -8}} 
                             variant="primary">{count_mess}</Badge>

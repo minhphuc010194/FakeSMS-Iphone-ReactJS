@@ -11,15 +11,13 @@ function App() {
     const [name, setName] = useState("ACB")
     const [text, setText] = useState([])
     const [time, setTime] = useState("22:59")
-    const [count_mess, setCountMess] = useState(0)
+    const [count_mess, setCountMess] = useState(9)
 
     function get_input(tag, value){
         switch(tag){
             case "name": setName(value) ;break;
-            case "text": 
-                // let temp = [...text]; 
-                let obj = {str: value, loc: "left"}; 
-                // temp.push(obj)
+            case "text":
+                let obj = {str: value, loc: "left"};
                 setText((prev)=>[...prev, obj])
             break;
             case "mytext":
@@ -30,7 +28,13 @@ function App() {
                 setTime(value)
             break;
             case "count_mess":
-                setCountMess(value)
+                if(isNaN(value)){
+                    value=0
+                }
+                if(value < 1000){
+                    setCountMess(value)
+                }
+                
             break;
         }
     }

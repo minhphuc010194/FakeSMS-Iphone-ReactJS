@@ -58,7 +58,7 @@ function Input_sms(props) {
                                     <Form.Control onChange={(e)=>get_input("time",e.target.value)} type="time" defaultValue="22:59" placeholder="Time...." />
                                 </Col>
                                 <Col>
-                                    <Form.Control onChange={(e)=>get_input("count_mess",parseInt(e.target.value))} type="number" placeholder="0" />
+                                    <Form.Control onChange={(e)=>get_input("count_mess", parseInt(e.target.value))} type="number" placeholder={9} />
                                 </Col>
                             </Row>
                         </Card.Body>
