@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import { Col, Container, Row, Badge, Form } from 'react-bootstrap';
 import location from '../../icons/ios10-location-status-icon.png';
 import cellular_signal from '../../icons/ios11-cellular-signal-icon.png'
@@ -24,24 +24,44 @@ import {MdNavigateNext} from 'react-icons/md';
 
 import PropTypes from 'prop-types';
 Share_screen.propTypes = {
-    
+    name: PropTypes.string,
+    text: PropTypes.array,
+    del_text: PropTypes.func,
+    get_input: PropTypes.func,
 };
 
 function Share_screen(props) {
+    const {name, text, del_text, get_input} = props
+    const ref_myText = useRef("")
+
+    function handle_del(id){
+        if (window.confirm(`Bạn chắc chắn muốn xóa ?`)) {
+            del_text(id)
+        }
+    }
+    function handle_sentMyText(){
+        if((ref_myText.current).trim()){
+            get_input('mytext',(ref_myText.current).trim())
+            document.getElementById('footer-input-mytext').value=""
+            ref_myText.current=""
+        }
+        
+    }
+    // console.log(text)
     return (
-        <Container className='screen' style={{width: 480, marginTop: 20, border: "1px solid #dfdfdf"}}>
-            <Row className="header-phone" style={{background:"#d6d7dc",paddingTop: 10, paddingBottom: 20}}>
-                <Col style={{textAlign:"left", paddingLeft:30}}>
+        <Container className='screen'>
+            <Row className="header-phone-row-01">
+                <Col className="header-phone-col-01">
                     <b>22:59</b>
                     <img style={{width: 16}} src={location} />
                 </Col>
-                <Col style={{textAlign:"right"}}>
+                <Col className="header-phone-col-02">
                     <img style={{width: 25}} src={cellular_signal} />
                     <img style={{width: 25}} src={wifi} />
                     <img style={{width: 30}} src={battery} />
                 </Col>
             </Row>
-            <Row style={{background:"#d6d7dc"}}>
+            <Row className="header-phone-row-02">
                 <Col>
                     <IoIosArrowBack size={35} color="#007bff" />
                     <span >
@@ -52,7 +72,7 @@ function Share_screen(props) {
                 </Col>
                 <Col style={{textAlign:"center"}}>
                     <img style={{width: 80, position:"relative", top: -18}} src={avatar} />
-                    <h6 style={{position:"relative", top:-17}}>ACB <MdNavigateNext style={{position:"absolute", top:-4}} size={30} color="#87909b" /></h6>
+                    <h6 style={{position:"relative", top:-17}}>{name} <MdNavigateNext style={{position:"absolute", top:-4}} size={30} color="#87909b" /></h6>
                 </Col>
                 <Col></Col>
             </Row>
@@ -60,41 +80,16 @@ function Share_screen(props) {
 {/* =============messenger========================== */}
             <Row className="body-phone" style={{minHeight: 668, maxHeight: 1201}}>
                 <Col>
-                    <Row style={{top: 0, display: 'block'}}>
-                        <Col className='bubble-grey'>
-                            <span >
-                                ACB: TK 2132132323232(VND) +190,000,000 luc 01:59 12/02/2021. So du 188,001,000. GD: li xi tet :D.
-                            </span>
-                            <div className='corner'></div>
-                        </Col>
-                        
-                    </Row>
-                    
-                    <Row style={{top: 0, display: 'block'}}>
-                        <Col className='bubble-grey'>
-                            <span >
-                                ACB: TK 2132132323232(VND) +190,000,000 luc 01:59 12/02/2021. So du 188,001,000. GD: li xi tet :D.
-                            </span>
-                            <div className='corner'></div>
-                        </Col>
-                    </Row>
-                    <Row style={{top: 0, display: 'block'}}>
-                        <Col className='bubble-grey'>
-                            <span >
-                                Hello my name is Phuc adsasdas dsssssss das fasfdsf SDF
-                            </span>
-                            <div className='corner'></div>
-                        </Col>
-                    </Row>
-                    {/* <Row>
-                        <Col>
-                            <span className='bubble-grey'>
-                                Hello my name is Phuc
-                            </span>
-                            <div className='corner'></div>
-                        </Col>
-                    </Row> */}
-                    
+                    {text.map((item,i)=>{
+                        return <Row className='body-phone-text-row' key={i}>
+                                    <Col style={{textAlign: item.loc}}>
+                                        <span className={'bubble-grey-'+item.loc} onClick={()=>handle_del(i)}>
+                                            {item.str}
+                                            <div className={'corner-'+item.loc}></div>
+                                        </span>
+                                    </Col>
+                                </Row>
+                    })}
                 </Col>
                 
             </Row>
@@ -108,8 +103,14 @@ function Share_screen(props) {
                     <img style={{width: 45, cursor:"pointer"}} src={store} />
                 </Col>
                 <Col>
-                    <Form.Control style={{position:"absolute", width: 300, left: -163, borderRadius: 20}} type="text" placeholder="Tin nhắn văn bản" />
-                    <img style={{width: 33, position:"absolute", left: 100, top: 2, cursor:"pointer"}} src={btn_sentSMS} />
+                    <Form.Control
+                        id='footer-input-mytext'
+                        className='footer-input-mytext-col'
+                        onChange={(e)=> ref_myText.current=e.target.value}
+                        type="text" placeholder="Tin nhắn văn bản" />
+                    <img 
+                        onClick={()=> handle_sentMyText()} 
+                        style={{width: 33, position:"absolute", left: 100, top: 2, cursor:"pointer"}} src={btn_sentSMS} />
                 </Col>
             </Row>
             

@@ -1,4 +1,31 @@
-.corner{
+.screen{
+    width: 480px;
+    margin-top: 20px;
+    border: 1px solid #dfdfdf;
+}
+.header-phone-row-01{
+    background:#d6d7dc;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.header-phone-col-01{
+    text-align: left;
+    padding-left: 30px;
+}
+.header-phone-col-02{
+    text-align: right;
+}
+
+.header-phone-row-02{
+    background: #d6d7dc;
+    margin-top: -1px;
+}
+.body-phone-text-row{
+    top: 0px;
+    /* display: block; */
+    cursor: pointer;
+}
+.corner-left{
     background: url('../../icons/bubble_corner_grey.png') no-repeat;
     width: 36px;
     height: 12px;
@@ -6,18 +33,63 @@
     bottom: -1px;
     left: -8px;
 }
-.bubble-grey{
+.bubble-grey-left{
     background: #d6d7dc;
     margin-left: 24px;
     margin-bottom: 14px;
     text-shadow: 1px 1px 0 #f3f3f4;
     padding: 14px;
-    
-    border-radius: 13px;
+    /* width: 20%; */
+    border-radius: 19px 20px 19px 20px;
 
     display: inline-block;
     /* padding: 12px 18px; */
-    max-width: 270px;
+    max-width: 345px;
+    min-height: 26px;
+    min-width: 44px;
+    font-size: 24px;
+    line-height: 26px;
+    position: relative;
+    overflow-wrap: break-word;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 10px 20px;
+    -webkit-border-radius: 20px 20px 10px 20
+}
+.footer-input-mytext-col{
+    position: absolute;
+    width: 300px;
+    left: -163px;
+    border-radius: 20px;
+}
+.body-phone{
+    min-height: 500px !important;
+    height: 550px !important;
+    max-height: 600px !important;
+    overflow-y: hidden;
+}
+
+
+.corner-right{
+    background: url('../../icons/bubble_corner_green.png') no-repeat;
+    width: 36px;
+    height: 12px;
+    position: absolute;
+    bottom: -1px;
+    right: -9px;
+}
+.bubble-grey-right{
+    
+    background: #00d148;
+    text-shadow: 1px 1px 0 #00c744;
+    margin-right: 24px;
+    
+    margin-bottom: 14px;
+
+    float: right;
+    color: #fff;
+    display: inline-block;
+    padding: 12px 18px;
+    max-width: 345px;
     min-height: 26px;
     min-width: 14px;
     font-size: 24px;
@@ -26,5 +98,5 @@
     overflow-wrap: break-word;
     border-radius: 20px 20px 10px 20px;
     -moz-border-radius: 20px 20px 10px 20px;
-    -webkit-border-radius: 20px 20px 10px 20
+    -webkit-border-radius: 20px 20px 10px 20px;
 }

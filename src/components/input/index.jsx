@@ -1,12 +1,24 @@
-import React from 'react';
-import {Accordion, Card, Button} from 'react-bootstrap';
+import React,{useRef} from 'react';
+import {Accordion, Card, Button, Form, InputGroup, Row, Col} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 Input_sms.propTypes = {
-    
+    get_input: PropTypes.func,
 };
 
 function Input_sms(props) {
+    const {get_input} = props
+    const ref_text = useRef("")
+
+
+    const change_text = () =>{
+        if((ref_text.current).trim()){
+            get_input("text",ref_text.current)
+            document.getElementById('input-text').value=""
+            ref_text.current = ""
+        }
+    }
+
     return (
         <>
             <Accordion defaultActiveKey="0">
@@ -17,7 +29,33 @@ function Input_sms(props) {
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="0">
-                        <Card.Body>body </Card.Body>
+                        <Card.Body>
+                            <Row>
+                                <Col>
+                                    <Form.Control onChange={(e)=>get_input("name",e.target.value)} type="text" placeholder="name...." />
+                                </Col>
+                            </Row>
+                            <br/>
+                            <Row>
+                                <Col>
+                                    <InputGroup className="mb-3">
+                                        <Form.Control
+                                            id="input-text"
+                                            placeholder="Text input..."
+                                            aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2"
+                                            onChange={(e)=>ref_text.current = e.target.value}
+                                            onKeyDown={(e)=>{if(e.key==="Enter"){change_text()}}}
+                                        />
+                                        <InputGroup.Append>
+                                            <Button onClick={change_text}>PUSH</Button>
+                                        </InputGroup.Append>
+                                    </InputGroup>
+                                </Col>
+                                
+                            </Row>
+                            {/* <p><Form.Control onChange={(e)=>get_input("text",e.target.value)} type="text" placeholder="text...." /></p> */}
+                        </Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -27,7 +65,7 @@ function Input_sms(props) {
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
-                        <Card.Body>body 1</Card.Body>
+                        <Card.Body>Rảnh rỗi viết tiếp....</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -37,7 +75,7 @@ function Input_sms(props) {
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="2">
-                        <Card.Body>body 2</Card.Body>
+                        <Card.Body>Rảnh rỗi viết tiếp....</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
@@ -47,7 +85,7 @@ function Input_sms(props) {
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="3">
-                        <Card.Body>body 3</Card.Body>
+                        <Card.Body>Rảnh rỗi viết tiếp....</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 
