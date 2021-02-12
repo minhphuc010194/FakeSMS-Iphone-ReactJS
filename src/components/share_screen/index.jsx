@@ -28,10 +28,12 @@ Share_screen.propTypes = {
     text: PropTypes.array,
     del_text: PropTypes.func,
     get_input: PropTypes.func,
+    time: PropTypes.string,
+    count_mess: PropTypes.number
 };
 
 function Share_screen(props) {
-    const {name, text, del_text, get_input} = props
+    const {name, text, del_text, get_input, time, count_mess} = props
     const ref_myText = useRef("")
 
     function handle_del(id){
@@ -52,7 +54,7 @@ function Share_screen(props) {
         <Container className='screen'>
             <Row className="header-phone-row-01">
                 <Col className="header-phone-col-01">
-                    <b>22:59</b>
+                    <b>{time}</b>
                     <img style={{width: 16}} src={location} />
                 </Col>
                 <Col className="header-phone-col-02">
@@ -67,7 +69,7 @@ function Share_screen(props) {
                     <span >
                        <Badge 
                             style={{borderRadius: 15, fontWeight:400, height: 20, width: 30, position:"relative", left: -8}} 
-                            variant="primary">113</Badge>
+                            variant="primary">{count_mess}</Badge>
                     </span>
                 </Col>
                 <Col style={{textAlign:"center"}}>
@@ -97,10 +99,10 @@ function Share_screen(props) {
             <br/>
             <Row>
                 <Col style={{textAlign: 'left'}}>
-                    <img style={{width: 40,cursor:"pointer"}} src={camera} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 40,cursor:"pointer"}} src={camera} />
                 </Col>
                 <Col style={{position:"relative", left: -90}}>
-                    <img style={{width: 45, cursor:"pointer"}} src={store} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 45, cursor:"pointer"}} src={store} />
                 </Col>
                 <Col>
                     <Form.Control
@@ -116,29 +118,29 @@ function Share_screen(props) {
             
             <Row className='footer' style={{marginTop: 5,background:"#d6d7dc",minHeight: 30, maxHeight: 100, height: 100, width:'107%'}}>
                 <Col style={{paddingRight: 3}}>
-                    <img style={{width: 50,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={photo} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 50,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={photo} />
                 </Col>
                 <Col style={{paddingRight: 3}}>
-                    <img style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={store_blue} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={store_blue} />
                 </Col>
                 <Col style={{paddingRight: 3}}>
-                    <img style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={smile_face} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={smile_face} />
                 </Col>
                 <Col style={{paddingRight: 3}}>
-                    <img style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={smile_face01} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={smile_face01} />
                 </Col>
                 <Col style={{paddingRight: 3}}>
-                    <img style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={sound} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={sound} />
                 </Col>
                 <Col style={{paddingRight: 3}}>
-                    <img style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={health} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{width: 46,marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={health} />
                 </Col>
                 <Col style={{paddingRight: 3}}>
                     <img style={{width: 3, height: 30,marginLeft: 12, marginTop: 9, borderRadius: 15, cursor:"pointer"}} src={vertical_dash} />
                 </Col>
                 
                 <Col style={{paddingRight: 3}}>
-                    <img style={{position:"absolute",width: 37,marginTop: 7, marginLeft: -7, cursor:"pointer"}} src={reddit} />
+                    <img onClick={()=>alert("Chờ rãnh :v")} style={{position:"absolute",width: 37,marginTop: 7, marginLeft: -7, cursor:"pointer"}} src={reddit} />
                 </Col>
                 <Row>
                     <Col>

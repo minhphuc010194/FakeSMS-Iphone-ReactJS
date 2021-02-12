@@ -10,7 +10,6 @@ function Input_sms(props) {
     const {get_input} = props
     const ref_text = useRef("")
 
-
     const change_text = () =>{
         if((ref_text.current).trim()){
             get_input("text",ref_text.current)
@@ -32,7 +31,7 @@ function Input_sms(props) {
                         <Card.Body>
                             <Row>
                                 <Col>
-                                    <Form.Control onChange={(e)=>get_input("name",e.target.value)} type="text" placeholder="name...." />
+                                    <Form.Control onChange={(e)=>get_input("name",e.target.value)} type="text" placeholder="Name...." />
                                 </Col>
                             </Row>
                             <br/>
@@ -54,7 +53,14 @@ function Input_sms(props) {
                                 </Col>
                                 
                             </Row>
-                            {/* <p><Form.Control onChange={(e)=>get_input("text",e.target.value)} type="text" placeholder="text...." /></p> */}
+                            <Row>
+                                <Col>
+                                    <Form.Control onChange={(e)=>get_input("time",e.target.value)} type="time" defaultValue="22:59" placeholder="Time...." />
+                                </Col>
+                                <Col>
+                                    <Form.Control onChange={(e)=>get_input("count_mess",parseInt(e.target.value))} type="number" placeholder="0" />
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>

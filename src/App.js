@@ -10,8 +10,8 @@ import Share_screen from './components/share_screen';
 function App() {
     const [name, setName] = useState("ACB")
     const [text, setText] = useState([])
-    
-
+    const [time, setTime] = useState("22:59")
+    const [count_mess, setCountMess] = useState(0)
 
     function get_input(tag, value){
         switch(tag){
@@ -26,7 +26,12 @@ function App() {
                 let obj_mytext = {str: value, loc: "right"}
                 setText((prev)=>[...prev, obj_mytext])
             break;
-
+            case "time":
+                setTime(value)
+            break;
+            case "count_mess":
+                setCountMess(value)
+            break;
         }
     }
     function del_text(id) {
@@ -47,6 +52,8 @@ function App() {
                 text={text}
                 del_text={del_text}
                 get_input={get_input}
+                time={time}
+                count_mess={count_mess}
             />
         </Col>
       </Row>
