@@ -1,5 +1,6 @@
 import React,{useRef} from 'react';
 import { Col, Container, Row, Badge, Form } from 'react-bootstrap';
+
 import location from '../../icons/ios10-location-status-icon.png';
 import cellular_signal from '../../icons/ios11-cellular-signal-icon.png'
 import wifi from "../../icons/ios10-wifi-symbol-status-icon.png";
@@ -29,13 +30,15 @@ Share_screen.propTypes = {
     del_text: PropTypes.func,
     get_input: PropTypes.func,
     time: PropTypes.string,
-    count_mess: PropTypes.number
+    count_mess: PropTypes.number,
+    ref_screenShot: PropTypes.object
 };
 
 function Share_screen(props) {
-    const {name, text, del_text, get_input, time, count_mess} = props
+    const {name, text, del_text, get_input, time, count_mess, ref_screenShot} = props
     const ref_myText = useRef("")
 
+    
     function handle_del(id){
         if (window.confirm(`Bạn chắc chắn muốn xóa ?`)) {
             del_text(id)
@@ -51,7 +54,7 @@ function Share_screen(props) {
     }
     // console.log(text)
     return (
-        <Container className='screen'>
+        <Container className='screen' ref={ref_screenShot}>
             <Row className="header-phone-row-01">
                 <Col className="header-phone-col-01">
                     <b>{time}</b>

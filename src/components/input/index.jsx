@@ -1,5 +1,6 @@
 import React,{useRef} from 'react';
 import {Accordion, Card, Button, Form, InputGroup, Row, Col} from 'react-bootstrap';
+
 import PropTypes from 'prop-types';
 
 Input_sms.propTypes = {
@@ -9,6 +10,8 @@ Input_sms.propTypes = {
 function Input_sms(props) {
     const {get_input} = props
     const ref_text = useRef("")
+   
+
 
     const change_text = () =>{
         if((ref_text.current).trim()){
@@ -96,6 +99,7 @@ function Input_sms(props) {
                 </Card>
                 
             </Accordion>
+            
         </>
     );
 }
