@@ -8,8 +8,8 @@ import {useScreenshot, createFileName} from 'use-react-screenshot';
 
 
 function App() {
-    const [, setStick] = useState(0)
-    const [name, setName] = useState("ACB")
+    
+    const [name, setName] = useState("Name")
     const [text, setText] = useState([])
     const [time, setTime] = useState("22:59")
     const [count_mess, setCountMess] = useState(9)
