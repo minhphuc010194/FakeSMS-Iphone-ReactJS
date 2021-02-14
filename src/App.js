@@ -18,7 +18,7 @@ function App() {
         type: "image/jpeg",
         quality: 1.0
     });
-    const getImage = () => takeScreenShot(ref_screenShot.current);
+    const getImage = () => {window.scrollTo(0,0);takeScreenShot(ref_screenShot.current)};
     
     const download = (image, { name = "img", extension = "jpg" } = {}) => {
         const a = document.createElement("a");
@@ -29,7 +29,7 @@ function App() {
         // setTimeout(()=>window.location.reload(),500)
     };
     
-    const downloadScreenshot = () => takeScreenShot(ref_screenShot.current).then(download);
+    const downloadScreenshot = () => {window.scrollTo(0,0); takeScreenShot(ref_screenShot.current).then(download)};
 
     function get_input(tag, value){
         switch(tag){
@@ -64,25 +64,25 @@ function App() {
   
   return (
     <Container className="container-root" style={{paddingLeft: 3}}>
-      <Row>
+        <Row>
           <Col>
-            <Input_sms get_input={get_input} />
-            <hr/>
-            <Row>
-                {/* <Col>
-                    <Button onClick={getImage} variant="outline-info" block>Screenshot</Button>
-                </Col> */}
-                <Col>
-                    <Button onClick={downloadScreenshot} variant="outline-success" block>Download ScreenShot</Button>
-                </Col>
-            </Row>
-            {/* <br/>
-            <Row>
-                <Col style={{display: !image&&"none", textAlign:'center'}}>
-                    <img  width={300} src={image} alt={"ScreenShot"} />
-                </Col>
-            </Row> */}
-        </Col>
+                <Input_sms get_input={get_input} />
+                <hr/>
+                <Row>
+                    <Col>
+                        <Button onClick={getImage} variant="outline-info" block>Screenshot</Button>
+                    </Col>
+                    <Col>
+                        <Button onClick={downloadScreenshot} variant="outline-success" block>Download ScreenShot</Button>
+                    </Col>
+                </Row>
+                <br/>
+                <Row>
+                    <Col style={{display: !image&&"none", textAlign:'center'}}>
+                        <img  width={'40%'} src={image} alt={"ScreenShot"} />
+                    </Col>
+                </Row>
+            </Col>
         <Col>
             <Share_screen
                 name={name}
