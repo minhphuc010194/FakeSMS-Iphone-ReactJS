@@ -21,16 +21,12 @@ function App() {
     const getImage = () => takeScreenShot(ref_screenShot.current);
     
     const download = (image, { name = "img", extension = "jpg" } = {}) => {
-        
         const a = document.createElement("a");
-        a.setAttribute("id", "MyID");
         a.href = image;
-        // const get_ = document.getElementById("MyID");
-        // console.log(a,get_)
-        // return;
         a.download = createFileName(extension, name);
         a.click();
-        setTimeout(()=>window.location.reload(),500)
+        
+        // setTimeout(()=>window.location.reload(),500)
     };
     
     const downloadScreenshot = () => takeScreenShot(ref_screenShot.current).then(download);
@@ -80,13 +76,12 @@ function App() {
                     <Button onClick={downloadScreenshot} variant="outline-success" block>Download ScreenShot</Button>
                 </Col>
             </Row>
-            <br/>
+            {/* <br/>
             <Row>
                 <Col style={{display: !image&&"none", textAlign:'center'}}>
                     <img  width={300} src={image} alt={"ScreenShot"} />
                 </Col>
-        
-            </Row>
+            </Row> */}
         </Col>
         <Col>
             <Share_screen
