@@ -1,5 +1,5 @@
 
-# Link demo [here](http://fakesmsiphone.surge.sh/) or [here](https://fake-fms-iphonexs.vercel.app/)
+# Link demo [here](http://fakesmsiphone.surge.sh/) or [here](https://fake-sms-iphonexs.vercel.app/)
 
 # Getting Started with Create React App
 <img width="938" alt="image" src="https://user-images.githubusercontent.com/58540065/186053540-f81c863b-e106-4435-bb00-31a4a47aba17.png">
