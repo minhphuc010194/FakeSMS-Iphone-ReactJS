@@ -7561,10 +7561,10 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
-react-bootstrap@1.6.5:
-  version "1.6.5"
-  resolved "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-1.6.5.tgz"
-  integrity sha512-l2rm5LtDI7JMtdGrzaxNl4OJwH0fMIJDlvwQ2TMvs9h9d0E4ELLpG3J45Pox6xUkpuFfXdWUiGazZXyIuv/OKA==
+react-bootstrap@1.6.7:
+  version "1.6.7"
+  resolved "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-1.6.7.tgz"
+  integrity sha512-IzCYXuLSKDEjGFglbFWk0/iHmdhdcJzTmtS6lXxc0kaNFx2PFgrQf5jKnx5sarF2tiXh9Tgx3pSt3pdK7YwkMA==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@restart/context" "^2.1.4"
