@@ -9070,10 +9070,10 @@ url-parse@^1.5.3:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
 
-use-react-screenshot@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/use-react-screenshot/-/use-react-screenshot-3.0.0.tgz"
-  integrity sha512-82+zsJgNWEUsUR7lslLIXMw9BW+xic+epn5Dl2ziedgsP9bz0HM0hfx3E71Kkv1U7F6Hyi4E/jMxuxJPLdpHcg==
+use-react-screenshot@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/use-react-screenshot/-/use-react-screenshot-4.0.0.tgz#8be533e0790e75c8fd72174ed523c2ed86c967fc"
+  integrity sha512-4UZIORp7iCklfNOS/dPJab9SPeGdS0nFyIi3qA1rfMyYf/em/KfodYhrOlSHAHWvfdeCrS67Jjk6H4M4oLYSWg==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
